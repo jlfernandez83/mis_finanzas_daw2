@@ -14,6 +14,10 @@ return new class extends Migration
         Schema::create('incomes', function (Blueprint $table) {
             $table->id();
             $table->double('amount');
+            $table->foreignId('category_id')
+            ->constrained()
+            ->onUpdate('cascade')
+            ->onDelete('restrict');
             $table->timestamps();
         });
     }

@@ -7,5 +7,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-//Route::resource('incomes', IncomeController::class);
-Route::get('/incomes', [IncomeController::class, 'index'])->name('incomes.index');
+Route::resource('incomes', IncomeController::class);
+//Route::get('/incomes', [IncomeController::class, 'index'])->name('incomes.index');
